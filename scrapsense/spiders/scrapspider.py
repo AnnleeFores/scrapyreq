@@ -3,6 +3,9 @@ from scrapy_playwright.page import PageMethod
 from dateutil import parser
 import re
 
+import subprocess
+subprocess.run(["playwright", "install"])
+
 
 # playwright integration for js website  Note: Make sure to edit settings.py to include playwright
 
