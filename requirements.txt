@@ -40,4 +40,3 @@ urllib3==1.26.11
 w3lib==1.22.0
 websockets==10.1
 zope.interface==5.4.0
-scrapy-playwright==0.0.20
