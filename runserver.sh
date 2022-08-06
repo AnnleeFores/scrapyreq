@@ -1,2 +1,2 @@
 #!/bin/sh
-(cd scrapsense ; scrapyrt)
+(cd scrapsense ; scrapyrt -p 80)
