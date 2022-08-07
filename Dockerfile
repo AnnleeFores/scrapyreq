@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright/python:v1.24.2-focal
+FROM mcr.microsoft.com/playwright/python
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
