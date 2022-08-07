@@ -1,9 +1,10 @@
-FROM library/python
+FROM python:3.10-slim-buster
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY ./requirements.txt /requirements.txt
+
 RUN pip install --no-cache-dir -r /requirements.txt \
     && rm -rf /requirements.txt
 
@@ -11,6 +12,6 @@ RUN playwright install
 
 COPY . /usr/src/app
 
-EXPOSE 80
+ENTRYPOINT ["scrapyrt", "-i", "0.0.0.0"]
 
-CMD ["scrapyrt -p 80"]
+EXPOSE 9080
