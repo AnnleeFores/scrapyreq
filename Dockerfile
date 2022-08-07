@@ -1,4 +1,4 @@
-FROM python:3.10-slim-buster
+FROM mcr.microsoft.com/playwright/python:v1.24.2-focal
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
