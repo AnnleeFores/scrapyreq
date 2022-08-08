@@ -17,8 +17,7 @@ class tkSpider(scrapy.Spider):
     def start_requests(self):
         
         yield scrapy.Request(
-            url=f'{self.link}',
-            # PageMethod('wait_for_selector', 'div.tn-entity-details')
+            url=f'{self.link}'
             )
 
     async def parse(self, response):
@@ -28,8 +27,8 @@ class tkSpider(scrapy.Spider):
         date = self.date
 
         ## if date booking is active get the details
+        
         active = response.css('li.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tab.ui-tabs-active.ui-state-active').get()
-
         # logic to check and retrive only the needed data in json format
         if active != None:
             venuehtml =  response.css('div#divTheatreInfo')
@@ -107,4 +106,3 @@ class tkdataSpider(scrapy.Spider):
                 'value' : venuename.css('h5::text').get(),
                 'bookinglink' : bookinglink.css('a').attrib['href'],
             }
-   
