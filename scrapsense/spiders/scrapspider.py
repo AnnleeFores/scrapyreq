@@ -25,8 +25,8 @@ class tkSpider(scrapy.Spider):
         date = self.date
 
         ## if date booking is active get the details
-        
         active = response.css('li.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tab.ui-tabs-active.ui-state-active').get()
+        
         # logic to check and retrive only the needed data in json format
         if active != None:
             venuehtml =  response.css('div#divTheatreInfo')
@@ -53,7 +53,6 @@ class tkdataSpider(scrapy.Spider):
         
         yield scrapy.Request(
             url=f'https://www.ticketnew.com/online-advance-booking/Theatres/C/{self.location}',
-            # PageMethod('wait_for_selector', 'div.tn-entity-details')
             )
 
     async def parse(self, response):
