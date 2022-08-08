@@ -3,7 +3,6 @@ from dateutil import parser
 import re
 
 
-
 # remove all symbols from string and join together
 def compareRegex(movie):
     movie = re.sub(r'[^\w]', '', movie)
