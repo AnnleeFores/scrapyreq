@@ -1,5 +1,4 @@
 import scrapy
-from scrapy_playwright.page import PageMethod
 from dateutil import parser
 import re
 
@@ -19,13 +18,8 @@ class tkSpider(scrapy.Spider):
         
         yield scrapy.Request(
             url=f'{self.link}',
-            meta=dict(
-                playwright=True,
-                playwright_include_page=True,
-                playwright_page_methods=[
-                    PageMethod('wait_for_selector', 'div.tn-entity-details')
-                ]
-            ))
+            # PageMethod('wait_for_selector', 'div.tn-entity-details')
+            )
 
     async def parse(self, response):
 
@@ -60,13 +54,8 @@ class bmsSpider(scrapy.Spider):
     def start_requests(self):
         yield scrapy.Request(
             url=f'https://in.bookmyshow.com/buytickets/{self.link}',
-            meta=dict(
-                playwright=True,
-                playwright_include_page=True,
-                playwright_page_methods=[
-                    PageMethod('wait_for_selector', 'ul#showEvents')
-                ]
-            ))
+            # PageMethod('wait_for_selector', 'ul#showEvents')
+           )
 
     async def parse(self, response):
 
@@ -106,13 +95,8 @@ class tkdataSpider(scrapy.Spider):
         
         yield scrapy.Request(
             url=f'https://www.ticketnew.com/online-advance-booking/Theatres/C/{self.location}',
-            meta=dict(
-                playwright=True,
-                playwright_include_page=True,
-                playwright_page_methods=[
-                    PageMethod('wait_for_selector', 'div.tn-entity-details')
-                ]
-            ))
+            # PageMethod('wait_for_selector', 'div.tn-entity-details')
+            )
 
     async def parse(self, response):
    
