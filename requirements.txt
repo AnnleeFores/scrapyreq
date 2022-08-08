@@ -16,7 +16,7 @@ itemloaders==1.0.4
 jmespath==1.0.1
 lxml==4.9.1
 parsel==1.6.0
-playwright==1.24.1
+
 Protego==0.2.1
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
@@ -29,7 +29,6 @@ queuelib==1.6.2
 requests==2.28.1
 requests-file==1.5.1
 Scrapy==2.6.2
-scrapy-playwright==0.0.19
 scrapyrt==0.13.0
 service-identity==21.1.0
 six==1.16.0
