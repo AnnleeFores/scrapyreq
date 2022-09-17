@@ -8,7 +8,7 @@ def compareRegex(movie):
     movie = re.sub(r'[^\w]', '', movie)
     return movie
 
-# spider for ticketnew websited
+# spider for ticketnew website
 class tkSpider(scrapy.Spider):
     name = 'tk'
     
